@@ -72,7 +72,8 @@ Para preparar una imagen nueva, el ajuste que se aplicó fue redimensionar a
 `assets/fondo.jpg` es la foto de la calle que hay detrás de todo. Va ya
 difuminada desde el archivo, no con `filter: blur()`: el desenfoque en CSS se
 recalcula en cada repintado, y una imagen difuminada comprime tanto que esta
-pesa 39 KB. Se preparó a 1800 px con un desenfoque gaussiano de radio 26.
+pesa 64 KB. Se preparó a 1800 px con un desenfoque gaussiano de radio 9, el
+punto en el que la escena todavía se reconoce pero no compite con las cartas.
 El original está en `imagenes-cartas/fondo-original.jpg`.
 
 El texto de cada carta está transcrito de la propia lámina. Se respetaron los
