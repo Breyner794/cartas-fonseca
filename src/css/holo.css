@@ -1,0 +1,193 @@
+/* La carta. El JavaScript solo escribe --mx, --my, --rx, --ry y --glow;
+   todo lo que se ve se decide aquí. */
+
+.card {
+  --mx: 50%;
+  --my: 50%;
+  --rx: 0deg;
+  --ry: 0deg;
+  --glow: 0;
+
+  position: relative;
+  width: var(--card-w, 17rem);
+  aspect-ratio: 2 / 3;
+}
+
+/* El resplandor del color propio de la carta, por detrás del canto */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 8% 1%;
+  border-radius: 50%;
+  background: var(--accent, var(--accent-default));
+  filter: blur(54px);
+  opacity: calc(0.2 + var(--glow) * 0.3);
+  transition: opacity var(--dur-ui) var(--ease-ui);
+}
+
+.card__float {
+  position: relative;
+  height: 100%;
+  animation: card-float 7s ease-in-out infinite;
+}
+
+.card__tilt {
+  position: relative;
+  height: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  /* La perspectiva va en el propio transform: una declaración `perspective`
+     en .card no llegaría hasta aquí, que es nieto suyo. */
+  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 260ms var(--ease-ui);
+  box-shadow:
+    0 1.5rem 2.6rem rgba(3, 6, 12, 0.6),
+    0 0.3rem 0.7rem rgba(3, 6, 12, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+/* Mientras el puntero manda, la carta deja de flotar y deja de suavizar:
+   el retardo de la transición se nota como gelatina. */
+.card.is-tilting .card__float {
+  animation-play-state: paused;
+}
+
+.card.is-tilting .card__tilt {
+  transition: none;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  padding: var(--space-5);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--t-md);
+  line-height: var(--lh-snug);
+  color: var(--text);
+  background-image: linear-gradient(165deg, var(--surface-2), var(--surface-0));
+}
+
+.card.is-missing .card__img {
+  display: none;
+}
+
+.card.is-missing .card__fallback {
+  display: grid;
+}
+
+/* Destello: sigue al puntero */
+.card__glare {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    42% 32% at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.14) 44%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  mix-blend-mode: soft-light;
+  opacity: calc(0.4 + var(--glow) * 0.6);
+  transition: opacity var(--dur-ui) var(--ease-ui);
+}
+
+/* Patrón holográfico: franjas de color y una textura fina por encima */
+.card__holo {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      100deg,
+      #ff6b9d 0%,
+      #ffd36b 11%,
+      #6bff95 22%,
+      #6ad7ff 33%,
+      #a98bff 44%,
+      #ff6b9d 55%
+    ),
+    repeating-linear-gradient(
+      -72deg,
+      rgba(255, 255, 255, 0) 0 3px,
+      rgba(255, 255, 255, 0.4) 3px 4px,
+      rgba(255, 255, 255, 0) 4px 10px
+    );
+  background-size: 280% 280%, 190% 190%;
+  background-position:
+    calc(var(--mx) * 1.7) calc(var(--my) * 1.7),
+    calc(var(--mx) * -1.1) calc(var(--my) * 0.4);
+  /* `screen` entre las dos capas mantiene las franjas claras: si se oscurecen,
+     la fusión con la lámina deja de teñir y el holo desaparece. */
+  background-blend-mode: screen;
+  /* El color lo pone esta capa; el brillo lo pone el destello */
+  mix-blend-mode: overlay;
+  filter: brightness(1.08) contrast(1.22) saturate(1.4);
+  /* Casi apagado en reposo: el arte de la carta manda hasta que entra la luz */
+  opacity: calc(0.1 + var(--glow) * 0.65);
+  /* Y la luz entra por donde está el puntero, no por toda la lámina a la vez */
+  mask-image: radial-gradient(
+    68% 52% at var(--mx) var(--my),
+    #000 0%,
+    rgba(0, 0, 0, 0.45) 55%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  transition: opacity var(--dur-ui) var(--ease-ui);
+}
+
+@keyframes card-float {
+  0%,
+  100% {
+    transform: translate3d(0, -0.9%, 0) rotate(-0.25deg);
+  }
+  50% {
+    transform: translate3d(0, 0.9%, 0) rotate(0.25deg);
+  }
+}
+
+/* Sin puntero no hay de dónde sacar el ángulo, así que el holo se mueve solo */
+@media (hover: none) {
+  .card.is-active .card__holo {
+    animation: holo-drift 11s linear infinite;
+  }
+}
+
+@keyframes holo-drift {
+  0% {
+    background-position: 0% 40%, 100% 20%;
+  }
+  50% {
+    background-position: 100% 60%, 0% 60%;
+  }
+  100% {
+    background-position: 0% 40%, 100% 20%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__float {
+    animation: none;
+  }
+
+  .card__tilt {
+    transform: none;
+    transition: none;
+  }
+
+  .card__glare {
+    opacity: 0.32;
+  }
+
+  .card__holo,
+  .card.is-active .card__holo {
+    opacity: 0.15;
+    animation: none;
+  }
+}

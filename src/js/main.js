@@ -1,4 +1,5 @@
 import { loadCollection, DataError } from "./data.js";
+import { createCard, enableTilt } from "./holo-card.js";
 
 const titleEl = document.getElementById("collection-title");
 const subtitleEl = document.getElementById("collection-subtitle");
@@ -29,7 +30,11 @@ async function start() {
     return;
   }
 
-  // El carrusel se monta aquí en la tarea siguiente.
+  // Montaje provisional: el carrusel lo sustituye en la tarea siguiente.
+  const nodes = data.cards.map(createCard);
+  carouselEl.append(...nodes);
+  nodes[0].classList.add("is-active");
+  enableTilt(nodes[0]);
 }
 
 function showMessage(message) {

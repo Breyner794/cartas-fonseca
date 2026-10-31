@@ -35,7 +35,9 @@ async function fetchJson(url) {
   let response;
 
   try {
-    response = await fetch(url);
+    // Revalidar siempre: si el navegador sirve la copia guardada, quien edite
+    // los datos no verá sus cambios al recargar.
+    response = await fetch(url, { cache: "no-cache" });
   } catch {
     throw new DataError(
       `No se pudo leer ${url}. Si has abierto la página con doble clic, ábrela desde un servidor local.`
