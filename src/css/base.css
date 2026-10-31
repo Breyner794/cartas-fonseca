@@ -26,14 +26,28 @@ body {
   line-height: var(--lh-body);
   color: var(--text);
   background-color: var(--surface-0);
-  /* La luz de la vitrina toma el color de la carta que hay delante. Entra
-     por arriba y se apaga antes de llegar al texto. */
+  /* Tres capas, de arriba abajo: la luz de la carta que hay delante, un velo
+     que sostiene la lectura, y la calle de fondo. La foto llega ya
+     difuminada desde assets/: un filter: blur() aquí se recalcularía en cada
+     repintado y pesaría diez veces más. */
   background-image: radial-gradient(
-    125% 90% at 50% -12%,
-    color-mix(in oklab, var(--page-accent) 30%, var(--surface-1)) 0%,
-    color-mix(in oklab, var(--page-accent) 9%, var(--surface-0)) 45%,
-    var(--surface-0) 72%
-  );
+      125% 90% at 50% -12%,
+      color-mix(in oklab, var(--page-accent) 26%, transparent) 0%,
+      transparent 58%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 11, 20, 0.84) 0%,
+      rgba(8, 11, 20, 0.78) 12%,
+      rgba(8, 11, 20, 0.34) 34%,
+      rgba(8, 11, 20, 0.34) 60%,
+      rgba(8, 11, 20, 0.8) 84%,
+      rgba(8, 11, 20, 0.88) 100%
+    ),
+    url("../../assets/fondo.jpg");
+  background-size: auto, auto, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   transition: --page-accent 760ms var(--ease-fan);
 }

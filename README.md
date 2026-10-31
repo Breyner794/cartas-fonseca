@@ -69,6 +69,12 @@ pantallas de densidad doble porque la carta nunca se muestra a más de ~340 px.
 Para preparar una imagen nueva, el ajuste que se aplicó fue redimensionar a
 900 px de ancho y guardar como JPEG de calidad 84, progresivo y optimizado.
 
+`assets/fondo.jpg` es la foto de la calle que hay detrás de todo. Va ya
+difuminada desde el archivo, no con `filter: blur()`: el desenfoque en CSS se
+recalcula en cada repintado, y una imagen difuminada comprime tanto que esta
+pesa 39 KB. Se preparó a 1800 px con un desenfoque gaussiano de radio 26.
+El original está en `imagenes-cartas/fondo-original.jpg`.
+
 El texto de cada carta está transcrito de la propia lámina. Se respetaron los
 términos del habla de la colección —chakal, chakalozo, orientozo, barrioza,
 gargoleo— y solo se corrigieron erratas de tecleo.
@@ -79,7 +85,8 @@ gargoleo— y solo se corrigieron erratas de tecleo.
 index.html
 dev-server.py            servidor de desarrollo sin caché
 data/cards.json          los datos de la colección
-assets/cards/            las imágenes
+assets/cards/            las imágenes de las cartas
+assets/fondo.jpg         la foto de fondo, ya difuminada
 src/css/tokens.css       color, tipografía, espaciado, movimiento
 src/css/base.css         reset, página y cabecera
 src/css/holo.css         la carta: capas, brillo, inclinación
