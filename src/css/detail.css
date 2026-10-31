@@ -147,11 +147,11 @@
 }
 
 .detail__name {
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: var(--t-xl);
-  font-weight: 500;
+  font-weight: 600;
   line-height: var(--lh-tight);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   overflow-wrap: anywhere;
 }
 
@@ -225,9 +225,10 @@
 .detail__body {
   margin-top: var(--space-6);
   max-width: var(--measure);
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: var(--t-base);
-  line-height: var(--lh-body);
+  /* Poppins tiene la x alta: con menos interlineado que un serif ya respira */
+  line-height: 1.68;
 }
 
 .detail__body p + p {

@@ -36,8 +36,12 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
 
   document.addEventListener("keydown", onArrowKey);
   stage.addEventListener("pointerdown", onPointerDown);
-  stage.addEventListener("pointerup", onPointerUp);
-  stage.addEventListener("pointercancel", () => {
+  // En la ventana, no en el escenario: así el final del gesto llega aunque el
+  // dedo se levante fuera, que es lo normal en un barrido que se pasa de largo.
+  // Capturar el puntero conseguiría lo mismo, pero desviaría el clic al
+  // escenario y la carta dejaría de abrirse.
+  window.addEventListener("pointerup", onPointerUp);
+  window.addEventListener("pointercancel", () => {
     swipeStart = null;
   });
 
@@ -86,6 +90,12 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
       node.focus({ preventScroll: true });
     }
 
+    // El fondo de la página se tiñe con el color de la carta que hay delante.
+    document.documentElement.style.setProperty(
+      "--page-accent",
+      cards[index].accent
+    );
+
     counter.textContent = `${index + 1} / ${total}`;
   }
 
@@ -101,10 +111,6 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
   function onPointerDown(event) {
     swiped = false;
     swipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
-
-    // Con captura, el `pointerup` llega aunque el dedo se levante fuera del
-    // escenario, que es lo normal en un barrido que se pasa de largo.
-    if (stage.setPointerCapture) stage.setPointerCapture(event.pointerId);
   }
 
   function onPointerUp(event) {

@@ -18,9 +18,10 @@
   /* Acento: valor de reserva cuando una carta no declara el suyo */
   --accent-default: #6ae3ff;
 
-  /* Tipografía */
-  --font-display: "Spectral", Georgia, "Times New Roman", serif;
-  --font-ui: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Tipografía. La gótica es la voz de la colección y se queda fuera de la
+     ficha: dentro manda la lectura. */
+  --font-display: "Grenze Gotisch", Georgia, serif;
+  --font-ui: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Escala modular de 1.25 sobre 17px */
   --t-xs: 0.78rem;

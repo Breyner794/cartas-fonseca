@@ -9,6 +9,14 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Registrar la variable como color es lo que permite transicionarla: una
+   custom property sin tipo salta de un valor a otro sin interpolar. */
+@property --page-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #6ae3ff;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -18,14 +26,22 @@ body {
   line-height: var(--lh-body);
   color: var(--text);
   background-color: var(--surface-0);
-  /* La luz de la vitrina: un foco alto y muy tenue, no un degradado
-     decorativo. Da a la carta un sitio donde estar. */
+  /* La luz de la vitrina toma el color de la carta que hay delante. Entra
+     por arriba y se apaga antes de llegar al texto. */
   background-image: radial-gradient(
-    120% 85% at 50% -10%,
-    var(--surface-1) 0%,
-    var(--surface-0) 62%
+    125% 90% at 50% -12%,
+    color-mix(in oklab, var(--page-accent) 30%, var(--surface-1)) 0%,
+    color-mix(in oklab, var(--page-accent) 9%, var(--surface-0)) 45%,
+    var(--surface-0) 72%
   );
   background-attachment: fixed;
+  transition: --page-accent 760ms var(--ease-fan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition-duration: 1ms;
+  }
 }
 
 h1,
@@ -88,17 +104,23 @@ button {
 
 .page__title {
   font-family: var(--font-display);
-  font-size: var(--t-lg);
+  /* La gótica es estrecha y alta: pide algo más de cuerpo que una sans */
+  font-size: var(--t-xl);
   font-weight: 500;
-  line-height: var(--lh-tight);
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
 }
 
 .page__subtitle {
-  margin-top: var(--space-1);
-  font-size: var(--t-sm);
+  margin-top: calc(var(--space-1) * -1);
+  font-family: var(--font-display);
+  font-size: var(--t-md);
+  font-weight: 300;
   line-height: var(--lh-snug);
-  color: var(--text-dim);
+  letter-spacing: 0.02em;
+  /* El color del fondo sube y baja con la carta; la jerarquía la marcan aquí
+     el tamaño y el peso, no un gris que se perdería sobre un acento claro. */
+  color: var(--text);
 }
 
 .page__error {
