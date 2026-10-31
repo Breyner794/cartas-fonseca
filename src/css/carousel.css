@@ -154,11 +154,45 @@
   }
 }
 
+/* En pantalla estrecha las flechas flotantes se comen las cartas vecinas, así
+   que bajan a flanquear el contador. El dedo tiene además el arrastre. */
 @media (max-width: 30rem) {
   .carousel {
     --card-w: clamp(8.5rem, 52vw, 12rem);
     --fan-x: 46%;
     --fan-rot: 16deg;
+
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+      "stage stage stage"
+      "prev counter next"
+      "hint hint hint";
+    justify-content: center;
+    column-gap: var(--space-5);
+  }
+
+  .carousel__stage {
+    grid-area: stage;
+  }
+
+  .carousel__arrow {
+    position: static;
+    grid-area: prev;
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .carousel__arrow--next {
+    grid-area: next;
+  }
+
+  .carousel__counter {
+    grid-area: counter;
+  }
+
+  .carousel__hint {
+    grid-area: hint;
+    margin-top: var(--space-1);
   }
 }
 

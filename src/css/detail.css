@@ -1,0 +1,256 @@
+/* La ficha. El color de la carta tiñe el ambiente; el texto nunca se apoya
+   en él, sino en una superficie oscura neutra. */
+
+.detail {
+  /* `inset: 0` en lugar de 100vw: vw incluye la barra de scroll y deja la
+     ficha desplazándose en horizontal. */
+  position: fixed;
+  inset: 0;
+  width: auto;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: var(--text);
+  background-color: transparent;
+  overflow-y: auto;
+  /* El fondo ampliado sobresale por los lados; aquí se recorta en vez de
+     convertirse en scroll horizontal. */
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+
+.detail::backdrop {
+  background-color: rgba(7, 11, 20, 0.78);
+  backdrop-filter: blur(26px) saturate(135%);
+}
+
+.detail[open] {
+  animation: detail-in 260ms var(--ease-ui) both;
+}
+
+.detail.is-closing {
+  animation: detail-out 180ms var(--ease-ui) both;
+}
+
+@keyframes detail-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}
+
+@keyframes detail-out {
+  to {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+}
+
+/* Ambiente: la propia lámina, ampliada y fuera de foco */
+
+.detail__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--card-image, none);
+  /* Se amplía con background-size, no con transform: un transform aquí
+     desborda el contenedor con scroll y le añade recorrido. */
+  background-size: 135%;
+  background-position: center;
+  filter: blur(72px) saturate(130%);
+  /* Ambiente, no escenario: lo justo para reconocer de qué carta se trata */
+  opacity: 0.26;
+  pointer-events: none;
+}
+
+.detail__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    72% 56% at 32% 34%,
+    var(--accent, var(--accent-default)),
+    transparent 70%
+  );
+  opacity: 0.24;
+}
+
+/* Cerrar */
+
+.detail__close {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: var(--radius-control);
+  color: var(--text);
+  background-color: rgba(16, 23, 38, 0.78);
+  border: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  transition:
+    background-color var(--dur-ui) var(--ease-ui),
+    border-color var(--dur-ui) var(--ease-ui);
+}
+
+.detail__close:hover {
+  background-color: var(--surface-2);
+  border-color: var(--text-dim);
+}
+
+.detail__close svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* La lámina acompaña a la lectura */
+
+.detail__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(15rem, 21rem) minmax(0, 1fr);
+  gap: var(--space-7);
+  align-items: start;
+  max-width: 70rem;
+  margin-inline: auto;
+  padding: var(--space-7) var(--space-6) var(--space-8);
+}
+
+.detail__card-col {
+  position: sticky;
+  top: var(--space-6);
+}
+
+.detail__card-col .card {
+  --card-w: 100%;
+}
+
+/* El panel de lectura: casi opaco, para que ningún acento llegue al texto */
+
+.detail__info {
+  padding: var(--space-6);
+  background-color: rgba(18, 25, 41, 0.9);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-panel);
+  backdrop-filter: blur(18px);
+}
+
+.detail__name {
+  font-family: var(--font-display);
+  font-size: var(--t-xl);
+  font-weight: 500;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+
+.detail__subtitle {
+  margin-top: var(--space-2);
+  font-size: var(--t-md);
+  line-height: var(--lh-snug);
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+
+.detail__subtitle:empty,
+.detail__tags:empty,
+.detail__stats:empty,
+.detail__body:empty {
+  display: none;
+}
+
+/* Etiquetas: el acento, aquí sí */
+
+.detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.detail__tags li {
+  padding: 0.15rem 0.7rem;
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--accent, var(--accent-default)) 55%, transparent);
+  border-radius: var(--radius-control);
+  overflow-wrap: anywhere;
+}
+
+/* Datos: el filete separa los pares, no decora */
+
+.detail__stats {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin-top: var(--space-5);
+  font-size: var(--t-sm);
+}
+
+.detail__stats dt {
+  padding: var(--space-3) var(--space-5) var(--space-3) 0;
+  color: color-mix(in srgb, var(--accent, var(--accent-default)) 72%, var(--text));
+  border-top: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.detail__stats dd {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--rule);
+  overflow-wrap: anywhere;
+}
+
+.detail__stats dt:first-of-type,
+.detail__stats dt:first-of-type + dd {
+  border-top: none;
+}
+
+/* El cuerpo, en el serif de catálogo y a 62 caracteres */
+
+.detail__body {
+  margin-top: var(--space-6);
+  max-width: var(--measure);
+  font-family: var(--font-display);
+  font-size: var(--t-base);
+  line-height: var(--lh-body);
+}
+
+.detail__body p + p {
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .detail__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+    padding: var(--space-7) var(--space-4) var(--space-7);
+  }
+
+  .detail__card-col {
+    top: var(--space-3);
+    width: min(52vw, 13rem);
+    margin-inline: auto;
+  }
+
+  .detail__info {
+    padding: var(--space-5);
+  }
+
+  .detail__name {
+    font-size: var(--t-lg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail[open],
+  .detail.is-closing {
+    animation: none;
+  }
+}

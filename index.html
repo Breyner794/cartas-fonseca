@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="src/css/base.css" />
     <link rel="stylesheet" href="src/css/holo.css" />
     <link rel="stylesheet" href="src/css/carousel.css" />
+    <link rel="stylesheet" href="src/css/detail.css" />
   </head>
 
   <body>
@@ -53,7 +54,28 @@
       </section>
     </div>
 
-    <dialog class="detail" id="detail" aria-label="Datos de la carta"></dialog>
+    <dialog class="detail" id="detail" aria-labelledby="detail-name">
+      <div class="detail__bg" id="detail-bg" aria-hidden="true"></div>
+
+      <button class="detail__close" id="detail-close" type="button">
+        <span class="visually-hidden">Cerrar la ficha</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <div class="detail__grid">
+        <div class="detail__card-col" id="detail-card"></div>
+
+        <div class="detail__info">
+          <h2 class="detail__name" id="detail-name"></h2>
+          <p class="detail__subtitle" id="detail-subtitle"></p>
+          <ul class="detail__tags" id="detail-tags"></ul>
+          <dl class="detail__stats" id="detail-stats"></dl>
+          <div class="detail__body" id="detail-body"></div>
+        </div>
+      </div>
+    </dialog>
 
     <script type="module" src="src/js/main.js"></script>
   </body>

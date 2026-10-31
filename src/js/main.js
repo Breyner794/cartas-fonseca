@@ -1,5 +1,6 @@
 import { loadCollection, DataError } from "./data.js";
 import { createCarousel } from "./carousel.js";
+import { createDetail } from "./detail.js";
 
 const titleEl = document.getElementById("collection-title");
 const subtitleEl = document.getElementById("collection-subtitle");
@@ -30,16 +31,15 @@ async function start() {
     return;
   }
 
+  const detail = createDetail(document.getElementById("detail"));
+
   createCarousel({
     stage: document.getElementById("carousel-stage"),
     prev: document.getElementById("carousel-prev"),
     next: document.getElementById("carousel-next"),
     counter: document.getElementById("carousel-counter"),
     cards: data.cards,
-    onOpen: (position) => {
-      // La ficha se abre aquí en la tarea siguiente.
-      console.info("abrir", data.cards[position].name);
-    },
+    onOpen: (position, cardEl) => detail.open(data.cards[position], cardEl),
   });
 }
 
