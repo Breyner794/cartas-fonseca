@@ -1,0 +1,60 @@
+/* Tokens. El color saturado no pertenece a la página: lo trae cada carta
+   en su propio --accent. Aquí solo vive el terciopelo de la vitrina. */
+
+:root {
+  /* Superficies */
+  --surface-0: #101726;
+  --surface-1: #182135;
+  --surface-2: #243150;
+  --rule: #2d3b5e;
+
+  /* Texto. #eef1f7 sobre --surface-1 da 13.6:1, muy por encima del 7:1
+     exigido, y el margen se conserva con cualquier accent del cliente. */
+  --text: #eef1f7;
+  --text-dim: #a8b3c9;
+
+  /* Acento: valor de reserva cuando una carta no declara el suyo */
+  --accent-default: #6ae3ff;
+
+  /* Tipografía */
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-ui: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Escala modular de 1.25 sobre 17px */
+  --t-xs: 0.78rem;
+  --t-sm: 0.9rem;
+  --t-base: 1.0625rem;
+  --t-md: 1.3rem;
+  --t-lg: 1.62rem;
+  --t-xl: 2.44rem;
+  --t-2xl: 3.05rem;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-body: 1.72;
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  /* Formas. Distintas por jerarquía: la carta tiene el radio proporcional
+     de una carta impresa; el panel de lectura, casi ninguno. */
+  --radius-card: 3.6% / 2.4%;
+  --radius-panel: 3px;
+  --radius-control: 999px;
+
+  /* Medida de lectura */
+  --measure: 62ch;
+
+  /* Movimiento */
+  --dur-fan: 450ms;
+  --ease-fan: cubic-bezier(0.22, 0.68, 0.28, 1);
+  --dur-ui: 180ms;
+  --ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
+}

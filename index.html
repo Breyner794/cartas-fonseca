@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colección Fonseca</title>
+    <meta
+      name="description"
+      content="Una colección de cartas presentada como lo que es: piezas que se miran de cerca."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap"
+    />
+
+    <link rel="stylesheet" href="src/css/tokens.css" />
+    <link rel="stylesheet" href="src/css/base.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="page__header">
+        <h1 class="page__title" id="collection-title"></h1>
+        <p class="page__subtitle" id="collection-subtitle"></p>
+      </header>
+
+      <p class="page__error" id="page-error" role="status" hidden></p>
+
+      <section class="carousel" id="carousel" aria-label="Cartas de la colección"></section>
+    </div>
+
+    <dialog class="detail" id="detail" aria-label="Datos de la carta"></dialog>
+
+    <script type="module" src="src/js/main.js"></script>
+  </body>
+</html>

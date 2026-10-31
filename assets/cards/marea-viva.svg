@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#042030"/>
+      <stop offset="1" stop-color="#01121c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#3fd6c1" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#3fd6c1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <rect width="720" height="480" fill="url(#glow)"/>
+  <path d="M 0 144 q 90 -14 180 0 q 90 14 180 0 q 90 -14 180 0 q 90 14 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.45" stroke-width="3.2"/>
+  <path d="M 0 180 q 90 -16 180 0 q 90 16 180 0 q 90 -16 180 0 q 90 16 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.41" stroke-width="3.0"/>
+  <path d="M 0 216 q 90 -18 180 0 q 90 18 180 0 q 90 -18 180 0 q 90 18 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.37" stroke-width="2.8"/>
+  <path d="M 0 252 q 90 -20 180 0 q 90 20 180 0 q 90 -20 180 0 q 90 20 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.33" stroke-width="2.6"/>
+  <path d="M 0 288 q 90 -22 180 0 q 90 22 180 0 q 90 -22 180 0 q 90 22 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.29" stroke-width="2.4"/>
+  <path d="M 0 324 q 90 -24 180 0 q 90 24 180 0 q 90 -24 180 0 q 90 24 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.25" stroke-width="2.2"/>
+  <path d="M 0 360 q 90 -26 180 0 q 90 26 180 0 q 90 -26 180 0 q 90 26 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.21" stroke-width="2.0"/>
+  <path d="M 0 396 q 90 -28 180 0 q 90 28 180 0 q 90 -28 180 0 q 90 28 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.17" stroke-width="1.8"/>
+  <path d="M 0 432 q 90 -30 180 0 q 90 30 180 0 q 90 -30 180 0 q 90 30 180 0" fill="none" stroke="#3fd6c1" stroke-opacity="0.13" stroke-width="1.6"/>
+  <rect x="17" y="17" width="686" height="446" rx="17" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="2"/>
+</svg>
