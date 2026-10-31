@@ -7,55 +7,30 @@
     {
       "id": "charalozo",
       "name": "Chakalozos al PODER",
-      "subtitle": "Carta Magia",
       "image": "assets/cards/charalozo.jpg",
       "accent": "#d619a3",
-      "tags": ["Carta Magia", "Hecha a mano"],
-      "stats": [
-        { "label": "Tipo", "value": "Magia" },
-        { "label": "Número", "value": "1 de 20" }
-      ],
       "description": "Carta Magia: adquieres el poder de empoderar una carta de algún chakal, potenciar sus puntos de poder.\n\nSer un chakalozo, estar orgulloso de tu identidad barrioza, meterte en la película, que por más que te sientas raro en esta vida, somos chakales al PODER."
     },
     {
       "id": "el-crema",
       "name": "La Crema",
-      "subtitle": "Nicolás González, artista orientozo",
       "image": "assets/cards/el-crema.jpg",
       "accent": "#ef3b2f",
-      "tags": ["Personaje", "CSB", "Ciudad Córdoba"],
-      "stats": [
-        { "label": "Tipo", "value": "Personaje" },
-        { "label": "Estrellas", "value": "3" },
-        { "label": "Puntos", "value": "300 Atk" },
-        { "label": "Número", "value": "1 de 20" }
-      ],
       "description": "Nicolás González, artista orientozo de ciudad Córdoba. Gran Sabio Popular, mago de los dichos, chakal de la CSB.\n\nHabilidad: se potencia +200 de Atk si se tiene alguna carta de CSB, Ciudad Córdoba o Chakalozos al PODER."
     },
     {
       "id": "raro-nunca-facho",
       "name": "Raro nunca facho",
-      "subtitle": "Resistir",
       "image": "assets/cards/raro-nunca-facho.jpg",
       "accent": "#2ec4d6",
-      "tags": ["Personaje"],
-      "stats": [{ "label": "Tipo", "value": "Personaje" }],
       "description": "Esta lámina no lleva cuadro de texto: lo que tiene que decir lo dice la camiseta."
     },
     {
       "id": "vegas-del-oriente",
       "name": "Valle Grande",
-      "subtitle": "Las Vegas del Oriente",
       "image": "assets/cards/vegas-del-oriente.jpg",
       "accent": "#ff2f9a",
-      "tags": ["Lugar", "CSB"],
-      "stats": [
-        { "label": "Tipo", "value": "Lugar" },
-        { "label": "Estrellas", "value": "2" },
-        { "label": "Puntos", "value": "500 Def" },
-        { "label": "Número", "value": "1 de 50" }
-      ],
-      "description": "Barrio popular del oriente de Cali, hogar del gargoleo, rumba y descontrol, hogar de la CSB.\n\nHabilidad: saca una carta de personaje que viva en este barrio."
+      "description": "El barrio Valle Grande se fundó en el año 2000 como una megaciudadela planificada de Vivienda de Interés Social (VIS) tipo 1, convirtiéndose en un espacio popular y de mucho comercio, gozando de espacios de diversión como: los parques de los Gemelos, los guerreros, comer en Caprichos. Hay muchos parches melos, manito.\n\nAquí creció mucho de la pandillita, en las Vegas del oriente, mano, dónde está una principal brillante, saturada y llena de indicios, con bordes de oscuridad, gargoleo, vicios. Pero aun así aquí crecimos y seguiremos siendo los favoritos del oriente por conocer este valle tan Grande."
     }
   ]
 }

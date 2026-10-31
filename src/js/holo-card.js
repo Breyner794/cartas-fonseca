@@ -23,7 +23,7 @@ export function createCard(card) {
   const img = document.createElement("img");
   img.className = "card__img";
   img.src = card.image;
-  img.alt = card.subtitle ? `${card.name}. ${card.subtitle}` : card.name;
+  img.alt = card.name;
   img.decoding = "async";
   // Una lámina escaneada tarda en decodificar. Sin esto aparece de golpe, y
   // mientras tanto la carta parece rota en lugar de estar cargando.

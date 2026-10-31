@@ -91,11 +91,8 @@ function normalizeCards(entries) {
     cards.push({
       id,
       name,
-      subtitle: text(entry.subtitle),
       image,
       accent: accent(entry.accent),
-      tags: tags(entry.tags),
-      stats: stats(entry.stats),
       paragraphs: paragraphs(entry.description),
     });
   }
@@ -144,19 +141,6 @@ function luminance(hex) {
     );
 
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-}
-
-function tags(value) {
-  if (!Array.isArray(value)) return [];
-  return value.map(text).filter(Boolean);
-}
-
-function stats(value) {
-  if (!Array.isArray(value)) return [];
-  return value
-    .filter((entry) => entry && typeof entry === "object")
-    .map((entry) => ({ label: text(entry.label), value: text(entry.value) }))
-    .filter((entry) => entry.label && entry.value);
 }
 
 function paragraphs(value) {

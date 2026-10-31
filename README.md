@@ -83,14 +83,8 @@ Abre `data/cards.json` y añade una entrada a la lista `cards`:
 {
   "id": "la-crema",
   "name": "La Crema",
-  "subtitle": "Nicolás González, artista orientozo",
   "image": "assets/cards/la-crema.jpg",
   "accent": "#ef3b2f",
-  "tags": ["Personaje", "CSB"],
-  "stats": [
-    { "label": "Tipo", "value": "Personaje" },
-    { "label": "Puntos", "value": "300 Atk" }
-  ],
   "description": "Un párrafo.\n\nY otro, separado por una línea en blanco."
 }
 ```
@@ -108,14 +102,12 @@ Recarga el navegador y la carta ya está.
 | `id` | obligatorio | Identifica la carta. No puede repetirse. |
 | `name` | obligatorio | El título de la ficha, y el texto que aparece si la imagen no carga. |
 | `image` | obligatorio | Ruta desde la raíz del proyecto. |
-| `subtitle` | opcional | Una línea bajo el título. |
-| `accent` | opcional | El color propio de la carta, en hexadecimal. Tiñe el fondo de la página cuando esa carta está delante, más el resplandor, los filetes y las etiquetas. Nunca toca el cuerpo del texto. |
-| `tags` | opcional | Tantas etiquetas como quieras. |
-| `stats` | opcional | Pares de dato y valor, los que quieras y con los nombres que quieras. |
-| `description` | opcional | Texto corrido. Una línea en blanco empieza un párrafo nuevo. |
+| `accent` | opcional | El color propio de la carta, en hexadecimal. Tiñe el fondo de la página cuando esa carta está delante, más el resplandor de la lámina y el filete bajo el título. Nunca toca el cuerpo del texto. |
+| `description` | opcional | La narración de la carta. Texto corrido; una línea en blanco empieza un párrafo nuevo. |
 
-Las secciones sin datos no se dibujan: una carta sin `tags` ni `stats` muestra
-solo su nombre y su texto.
+Eso es todo lo que lleva una carta. La ficha muestra la lámina, su nombre y su
+narración: lo que hay escrito en la propia carta —tipo, puntos, número— ya se
+lee en la imagen, así que no se repite al lado.
 
 **Para elegir el `accent`,** toma un color que destaque en la propia lámina. Si
 lo dejas vacío, no es un hexadecimal o es tan oscuro que no se vería sobre el

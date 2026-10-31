@@ -8,9 +8,6 @@ export function createDetail(dialog) {
   const closeButton = dialog.querySelector("#detail-close");
   const cardCol = dialog.querySelector("#detail-card");
   const nameEl = dialog.querySelector("#detail-name");
-  const subtitleEl = dialog.querySelector("#detail-subtitle");
-  const tagsEl = dialog.querySelector("#detail-tags");
-  const statsEl = dialog.querySelector("#detail-stats");
   const bodyEl = dialog.querySelector("#detail-body");
 
   let cardNode = null;
@@ -51,10 +48,6 @@ export function createDetail(dialog) {
     bg.style.setProperty("--card-image", `url(${JSON.stringify(image)})`);
 
     nameEl.textContent = card.name;
-    subtitleEl.textContent = card.subtitle;
-
-    renderTags(card.tags);
-    renderStats(card.stats);
     renderBody(card.paragraphs);
 
     cardNode = createCard(card);
@@ -85,32 +78,6 @@ export function createDetail(dialog) {
     Promise.allSettled(animations.map((animation) => animation.finished)).then(
       () => dialog.close()
     );
-  }
-
-  function renderTags(tags) {
-    tagsEl.replaceChildren(
-      ...tags.map((tag) => {
-        const item = document.createElement("li");
-        item.textContent = tag;
-        return item;
-      })
-    );
-  }
-
-  function renderStats(stats) {
-    const nodes = [];
-
-    for (const stat of stats) {
-      const label = document.createElement("dt");
-      label.textContent = stat.label;
-
-      const value = document.createElement("dd");
-      value.textContent = stat.value;
-
-      nodes.push(label, value);
-    }
-
-    statsEl.replaceChildren(...nodes);
   }
 
   function renderBody(paragraphs) {
