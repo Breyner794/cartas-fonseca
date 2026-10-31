@@ -44,7 +44,11 @@ export function createDetail(dialog) {
     returnFocusTo = focusTarget ?? null;
 
     dialog.style.setProperty("--accent", card.accent);
-    bg.style.setProperty("--card-image", `url(${JSON.stringify(card.image)})`);
+
+    // Absoluta a propósito: una url() dentro de una custom property se
+    // resuelve contra la hoja que la usa (src/css/), no contra el documento.
+    const image = new URL(card.image, document.baseURI).href;
+    bg.style.setProperty("--card-image", `url(${JSON.stringify(image)})`);
 
     nameEl.textContent = card.name;
     subtitleEl.textContent = card.subtitle;

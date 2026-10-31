@@ -11,7 +11,9 @@
   /* Texto. #eef1f7 sobre --surface-1 da 13.6:1, muy por encima del 7:1
      exigido, y el margen se conserva con cualquier accent del cliente. */
   --text: #eef1f7;
-  --text-dim: #a8b3c9;
+  /* Aclarado hasta superar 7:1 también en el peor caso del panel de la ficha,
+     cuando el ambiente de la carta es muy luminoso. */
+  --text-dim: #b4bfd3;
 
   /* Acento: valor de reserva cuando una carta no declara el suyo */
   --accent-default: #6ae3ff;
