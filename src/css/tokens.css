@@ -47,6 +47,9 @@
 
   /* Formas. Distintas por jerarquía: la carta tiene el radio proporcional
      de una carta impresa; el panel de lectura, casi ninguno. */
+  /* La proporción de una carta de verdad (63×88 mm), que es la de las
+     láminas de la colección. */
+  --card-ratio: 0.71;
   --radius-card: 3.6% / 2.4%;
   --radius-panel: 3px;
   --radius-control: 999px;

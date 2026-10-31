@@ -23,22 +23,22 @@ ver el cambio.
 
 ## Añadir una carta
 
-1. Deja la imagen en `assets/cards/`. Es la carta entera, con su arte y su
-   marco. Lo ideal es vertical en proporción 2:3; otras proporciones se
+1. Deja la imagen en `assets/cards/`. Es la lámina entera. Lo ideal es vertical
+   en proporción de carta (63×88 mm, o sea 0,71); otras proporciones se
    recortan centradas sin deformarse.
 2. Añade su entrada a la lista `cards` de `data/cards.json`.
 
 ```json
 {
-  "id": "halo-lunar",
-  "name": "Halo lunar",
-  "subtitle": "Tres anillos discontinuos",
-  "image": "assets/cards/halo-lunar.svg",
-  "accent": "#cfdcff",
-  "tags": ["Fenómenos", "Primera tirada"],
+  "id": "el-crema",
+  "name": "La Crema",
+  "subtitle": "Nicolás González, artista orientozo",
+  "image": "assets/cards/el-crema.jpg",
+  "accent": "#ef3b2f",
+  "tags": ["Personaje", "CSB"],
   "stats": [
-    { "label": "Rareza", "value": "Común" },
-    { "label": "Número", "value": "3 de 6" }
+    { "label": "Tipo", "value": "Personaje" },
+    { "label": "Puntos", "value": "300 Atk" }
   ],
   "description": "Un párrafo.\n\nY otro, separado por una línea en blanco."
 }
@@ -50,7 +50,7 @@ ver el cambio.
 | `name` | obligatorio | El título de la ficha y el texto que aparece si la imagen falta. |
 | `image` | obligatorio | Ruta desde la raíz del proyecto. |
 | `subtitle` | opcional | Una línea bajo el título. |
-| `accent` | opcional | Color propio de la carta, en hexadecimal. Tiñe el resplandor, los filetes y las etiquetas, nunca el texto. Si falta o no es un hexadecimal, se usa el color por defecto. |
+| `accent` | opcional | Color propio de la carta, en hexadecimal. Tiñe el resplandor, los filetes y las etiquetas, nunca el cuerpo del texto. Si falta, no es un hexadecimal o es casi negro —y entonces no se vería sobre el fondo oscuro—, se usa el color por defecto y queda el aviso en la consola. |
 | `tags` | opcional | Tantas etiquetas como quieras. |
 | `stats` | opcional | Pares de dato y valor, los que quieras y con los nombres que quieras. |
 | `description` | opcional | Texto corrido. Una línea en blanco empieza un párrafo nuevo. |
@@ -59,13 +59,19 @@ Las secciones sin datos no se dibujan: una carta sin `tags` ni `stats` muestra
 solo su nombre y su texto. Una entrada a la que le falte un campo obligatorio se
 omite y queda avisada en la consola del navegador, sin tumbar el resto.
 
-## Los datos de muestra
+## Las imágenes
 
-Los de este repositorio son de prueba y están hechos a propósito para provocar
-los casos difíciles: una descripción de 2000 palabras, una carta sin ficha, una
-imagen que no existe, un formato cuadrado y otro panorámico, una referencia
-larguísima sin espacios y un acento amarillo de alta luminancia. Conviene
-conservarlos mientras se trabaja en la página y sustituirlos al final.
+`imagenes-cartas/` guarda los originales tal como salieron de la cámara, a
+unos 3,5 MB cada uno. Lo que sirve la página son las versiones de
+`assets/cards/`: 900 px de ancho y unos 300 KB, que se ven nítidas incluso en
+pantallas de densidad doble porque la carta nunca se muestra a más de ~340 px.
+
+Para preparar una imagen nueva, el ajuste que se aplicó fue redimensionar a
+900 px de ancho y guardar como JPEG de calidad 84, progresivo y optimizado.
+
+El texto de cada carta está transcrito de la propia lámina. Se respetaron los
+términos del habla de la colección —chakal, chakalozo, orientozo, barrioza,
+gargoleo— y solo se corrigieron erratas de tecleo.
 
 ## Estructura
 

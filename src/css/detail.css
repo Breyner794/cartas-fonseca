@@ -128,8 +128,12 @@
   top: var(--space-6);
 }
 
+/* El ancho sale también de la altura disponible: en una ventana baja (tablet
+   apaisada, escritorio con las herramientas abiertas) la carta se encoge en
+   lugar de quedar con el pie permanentemente fuera de la pantalla. */
 .detail__card-col .card {
-  --card-w: 100%;
+  --card-w: min(100%, calc((100dvh - 5rem) * var(--card-ratio)));
+  margin-inline: auto;
 }
 
 /* El panel de lectura: casi opaco, para que ningún acento llegue al texto */
@@ -189,16 +193,20 @@
 
 .detail__stats {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
   margin-top: var(--space-5);
   font-size: var(--t-sm);
 }
 
 .detail__stats dt {
   padding: var(--space-3) var(--space-5) var(--space-3) 0;
-  color: color-mix(in srgb, var(--accent, var(--accent-default)) 72%, var(--text));
+  /* Mezcla en oklab y con el acento en minoría: así un acento oscuro (granate,
+     azul marino) sigue dando un rótulo legible, no solo los luminosos. */
+  color: color-mix(in oklab, var(--accent, var(--accent-default)) 34%, var(--text));
   border-top: 1px solid var(--rule);
-  white-space: nowrap;
+  /* Sin `nowrap`: un rótulo como «Fecha de adquisición» colapsaría la columna
+     del valor y lo dejaría recortado sin forma de leerlo. */
+  overflow-wrap: anywhere;
 }
 
 .detail__stats dd {

@@ -21,9 +21,10 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
       else goTo(position);
     });
     node.addEventListener("keydown", (event) => {
+      if (position !== index) return;
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
-      onOpen(index, node);
+      onOpen(position, node);
     });
     stage.append(node);
   });
@@ -52,6 +53,10 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
   }
 
   function render() {
+    // Si el foco estaba en una carta, tiene que viajar con la activa: si no,
+    // acaba sobre una carta oculta y la persona pierde su sitio en el abanico.
+    const focusWasInStage = stage.contains(document.activeElement);
+
     nodes.forEach((node, position) => {
       const offset = shortestOffset(position, index, total);
       const far = Math.abs(offset) > 2;
@@ -77,6 +82,10 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
       active = node;
     }
 
+    if (focusWasInStage && document.activeElement !== node) {
+      node.focus({ preventScroll: true });
+    }
+
     counter.textContent = `${index + 1} / ${total}`;
   }
 
@@ -92,6 +101,10 @@ export function createCarousel({ stage, prev, next, counter, cards, onOpen }) {
   function onPointerDown(event) {
     swiped = false;
     swipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
+
+    // Con captura, el `pointerup` llega aunque el dedo se levante fuera del
+    // escenario, que es lo normal en un barrido que se pasa de largo.
+    if (stage.setPointerCapture) stage.setPointerCapture(event.pointerId);
   }
 
   function onPointerUp(event) {

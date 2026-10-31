@@ -5,6 +5,9 @@
 const DEFAULT_URL = "data/cards.json";
 const HEX = /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
 const FALLBACK_ACCENT = "var(--accent-default)";
+// Por debajo de esta luminancia relativa el acento deja de cumplir su función.
+// Un azul marino (#0b2545) la supera; un negro casi puro, no.
+const MIN_ACCENT_LUMINANCE = 0.015;
 
 export class DataError extends Error {
   constructor(message) {
@@ -106,9 +109,41 @@ function text(value) {
 
 function accent(value) {
   const candidate = text(value);
-  if (HEX.test(candidate)) return candidate;
-  if (candidate) console.warn(`Acento ignorado, no es un hexadecimal: "${candidate}".`);
-  return FALLBACK_ACCENT;
+
+  if (!HEX.test(candidate)) {
+    if (candidate) {
+      console.warn(`Acento ignorado, no es un hexadecimal: "${candidate}".`);
+    }
+    return FALLBACK_ACCENT;
+  }
+
+  // Un acento casi negro no ilumina el resplandor, no se ve en los filetes y
+  // deja los rótulos de los datos por debajo del contraste exigido.
+  if (luminance(candidate) < MIN_ACCENT_LUMINANCE) {
+    console.warn(
+      `Acento ignorado por demasiado oscuro: "${candidate}". Elige un color que se vea sobre fondo oscuro.`
+    );
+    return FALLBACK_ACCENT;
+  }
+
+  return candidate;
+}
+
+function luminance(hex) {
+  const digits =
+    hex.length === 4
+      ? [...hex.slice(1)].map((digit) => digit + digit)
+      : [hex.slice(1, 3), hex.slice(3, 5), hex.slice(5, 7)];
+
+  const [r, g, b] = digits
+    .map((pair) => parseInt(pair, 16) / 255)
+    .map((channel) =>
+      channel <= 0.03928
+        ? channel / 12.92
+        : Math.pow((channel + 0.055) / 1.055, 2.4)
+    );
+
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
 function tags(value) {

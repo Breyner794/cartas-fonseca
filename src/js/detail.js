@@ -58,6 +58,9 @@ export function createDetail(dialog) {
     renderBody(card.paragraphs);
 
     cardNode = createCard(card);
+    // Sin esto, en táctil la carta de la ficha se queda sin barrido holográfico
+    // justo en la vista donde se mira de cerca.
+    cardNode.classList.add("is-active");
     cardCol.replaceChildren(cardNode);
     enableTilt(cardNode);
 

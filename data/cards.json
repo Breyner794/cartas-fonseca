@@ -1,169 +1,61 @@
 {
   "collection": {
     "title": "Colección Fonseca",
-    "subtitle": "Seis fenómenos, primera tirada"
+    "subtitle": "Cartas de barrio, hechas a mano"
   },
   "cards": [
     {
-      "id": "aurora",
-      "name": "Aurora",
-      "subtitle": "Lámina verde sobre fondo de noche cerrada",
-      "image": "assets/cards/aurora.svg",
-      "accent": "#4ff0c0",
-      "tags": [
-        "Fenómenos",
-        "Primera tirada",
-        "Variante de color"
-      ],
+      "id": "charalozo",
+      "name": "Chakalozos al PODER",
+      "subtitle": "Carta Magia",
+      "image": "assets/cards/charalozo.jpg",
+      "accent": "#d619a3",
+      "tags": ["Carta Magia", "Hecha a mano"],
       "stats": [
-        {
-          "label": "Rareza",
-          "value": "Holográfica"
-        },
-        {
-          "label": "Set",
-          "value": "Fenómenos I"
-        },
-        {
-          "label": "Número",
-          "value": "1 de 6"
-        },
-        {
-          "label": "Año",
-          "value": "2024"
-        },
-        {
-          "label": "Estado",
-          "value": "Excelente"
-        }
+        { "label": "Tipo", "value": "Magia" },
+        { "label": "Número", "value": "1 de 20" }
       ],
-      "description": "El coleccionista anterior la guardó plana, nunca de canto, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Conviene tenerlo en cuenta al compararla con otras copias. El verde de esta tirada no se repitió en ninguna posterior, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Los catálogos posteriores omitieron el dato. Quien la imprimió dejó la plancha corrida dos décimas de milímetro, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. El archivo lo registró como variante, no como defecto. El verde de esta tirada no se repitió en ninguna posterior, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Es el rasgo por el que se la reconoce.\n\nSe catalogó tarde, cuando el resto de la colección ya estaba numerado, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Los catálogos posteriores omitieron el dato. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Es el rasgo por el que se la reconoce. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Conviene tenerlo en cuenta al compararla con otras copias. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Así consta en la ficha de entrada. El coleccionista anterior la guardó plana, nunca de canto, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Conviene tenerlo en cuenta al compararla con otras copias.\n\nLa lámina reacciona distinto según la hora a la que se mire, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Es el rasgo por el que se la reconoce. Quien la imprimió dejó la plancha corrida dos décimas de milímetro, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. El archivo lo registró como variante, no como defecto. Se catalogó tarde, cuando el resto de la colección ya estaba numerado, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. El archivo lo registró como variante, no como defecto. El reverso conserva el sello seco completo, algo infrecuente en esta serie, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. El archivo lo registró como variante, no como defecto. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Nada de esto afecta a su estado, que sigue siendo excelente.\n\nQuien la imprimió dejó la plancha corrida dos décimas de milímetro, con un desplazamiento de color que va del cian al verde según el ángulo. Por eso se expone siempre bajo luz indirecta. Quien la imprimió dejó la plancha corrida dos décimas de milímetro, eso explica el halo doble que aparece en el borde izquierdo cuando la luz entra baja. Es el rasgo por el que se la reconoce. En la ficha original, escrita a mano, alguien anotó el nombre en minúscula, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Es el rasgo por el que se la reconoce. El coleccionista anterior la guardó plana, nunca de canto, y conviene mirarla fuera de la funda para juzgar el estado real del laminado. Por eso se expone siempre bajo luz indirecta.\n\nQuien la imprimió dejó la plancha corrida dos décimas de milímetro, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. El archivo lo registró como variante, no como defecto. El reverso conserva el sello seco completo, algo infrecuente en esta serie, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. El archivo lo registró como variante, no como defecto. El reverso conserva el sello seco completo, algo infrecuente en esta serie, eso explica el halo doble que aparece en el borde izquierdo cuando la luz entra baja. Por eso se expone siempre bajo luz indirecta. Quien la imprimió dejó la plancha corrida dos décimas de milímetro, lo que da a la superficie una profundidad que las reediciones no consiguieron. Conviene tenerlo en cuenta al compararla con otras copias.\n\nQuien la imprimió dejó la plancha corrida dos décimas de milímetro, eso explica el halo doble que aparece en el borde izquierdo cuando la luz entra baja. Es el rasgo por el que se la reconoce. El coleccionista anterior la guardó plana, nunca de canto, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Los catálogos posteriores omitieron el dato. En la ficha original, escrita a mano, alguien anotó el nombre en minúscula, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Conviene tenerlo en cuenta al compararla con otras copias. El verde de esta tirada no se repitió en ninguna posterior, y conviene mirarla fuera de la funda para juzgar el estado real del laminado. Por eso se expone siempre bajo luz indirecta. Quien la imprimió dejó la plancha corrida dos décimas de milímetro, y conviene mirarla fuera de la funda para juzgar el estado real del laminado. Por eso se expone siempre bajo luz indirecta.\n\nLa pieza llegó al archivo sin estuche y con el canto superior apenas rozado, con un desplazamiento de color que va del cian al verde según el ángulo. El archivo lo registró como variante, no como defecto. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Los catálogos posteriores omitieron el dato. Se catalogó tarde, cuando el resto de la colección ya estaba numerado, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Es el rasgo por el que se la reconoce.\n\nEn la ficha original, escrita a mano, alguien anotó el nombre en minúscula, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. El archivo lo registró como variante, no como defecto. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, aunque el efecto solo se aprecia con la carta inclinada hacia la fuente de luz. El archivo lo registró como variante, no como defecto. Se catalogó tarde, cuando el resto de la colección ya estaba numerado, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Nada de esto afecta a su estado, que sigue siendo excelente.\n\nEn la ficha original, escrita a mano, alguien anotó el nombre en minúscula, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Es el rasgo por el que se la reconoce. El reverso conserva el sello seco completo, algo infrecuente en esta serie, aunque el efecto solo se aprecia con la carta inclinada hacia la fuente de luz. Es lo primero que se comprueba al autenticarla. El verde de esta tirada no se repitió en ninguna posterior, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Los catálogos posteriores omitieron el dato.\n\nEl verde de esta tirada no se repitió en ninguna posterior, lo que da a la superficie una profundidad que las reediciones no consiguieron. El archivo lo registró como variante, no como defecto. En la ficha original, escrita a mano, alguien anotó el nombre en minúscula, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Conviene tenerlo en cuenta al compararla con otras copias. El verde de esta tirada no se repitió en ninguna posterior, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Por eso se expone siempre bajo luz indirecta. El coleccionista anterior la guardó plana, nunca de canto, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Por eso se expone siempre bajo luz indirecta.\n\nQuien la imprimió dejó la plancha corrida dos décimas de milímetro, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Es el rasgo por el que se la reconoce. La lámina reacciona distinto según la hora a la que se mire, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Por eso se expone siempre bajo luz indirecta. La lámina reacciona distinto según la hora a la que se mire, y conviene mirarla fuera de la funda para juzgar el estado real del laminado. Es lo primero que se comprueba al autenticarla.\n\nEl verde de esta tirada no se repitió en ninguna posterior, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Los catálogos posteriores omitieron el dato. En la ficha original, escrita a mano, alguien anotó el nombre en minúscula, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Nada de esto afecta a su estado, que sigue siendo excelente. La lámina reacciona distinto según la hora a la que se mire, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Conviene tenerlo en cuenta al compararla con otras copias. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. El archivo lo registró como variante, no como defecto.\n\nEl coleccionista anterior la guardó plana, nunca de canto, de modo que el brillo se concentra en el tercio superior y deja el resto en calma. Es el rasgo por el que se la reconoce. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, lo que da a la superficie una profundidad que las reediciones no consiguieron. El archivo lo registró como variante, no como defecto. El reverso conserva el sello seco completo, algo infrecuente en esta serie, lo que da a la superficie una profundidad que las reediciones no consiguieron. Nada de esto afecta a su estado, que sigue siendo excelente. El reverso conserva el sello seco completo, algo infrecuente en esta serie, lo que da a la superficie una profundidad que las reediciones no consiguieron. Es lo primero que se comprueba al autenticarla.\n\nEl verde de esta tirada no se repitió en ninguna posterior, eso explica el halo doble que aparece en el borde izquierdo cuando la luz entra baja. Es el rasgo por el que se la reconoce. El coleccionista anterior la guardó plana, nunca de canto, aunque el efecto solo se aprecia con la carta inclinada hacia la fuente de luz. El archivo lo registró como variante, no como defecto. La pieza llegó al archivo sin estuche y con el canto superior apenas rozado, eso explica el halo doble que aparece en el borde izquierdo cuando la luz entra baja. Nada de esto afecta a su estado, que sigue siendo excelente. El coleccionista anterior la guardó plana, nunca de canto, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. El archivo lo registró como variante, no como defecto.\n\nEl verde de esta tirada no se repitió en ninguna posterior, y por eso el patrón holográfico se abre en abanico en lugar de en líneas paralelas. Nada de esto afecta a su estado, que sigue siendo excelente. El coleccionista anterior la guardó plana, nunca de canto, aunque el efecto solo se aprecia con la carta inclinada hacia la fuente de luz. Es el rasgo por el que se la reconoce. El verde de esta tirada no se repitió en ninguna posterior, aunque el efecto solo se aprecia con la carta inclinada hacia la fuente de luz. Así consta en la ficha de entrada. Quien la imprimió dejó la plancha corrida dos décimas de milímetro, con lo que el contraste entre el fondo y el trazo resulta más acusado de lo habitual. Nada de esto afecta a su estado, que sigue siendo excelente."
+      "description": "Carta Magia: adquieres el poder de empoderar una carta de algún chakal, potenciar sus puntos de poder.\n\nSer un chakalozo, estar orgulloso de tu identidad barrioza, meterte en la película, que por más que te sientas raro en esta vida, somos chakales al PODER."
     },
     {
-      "id": "eclipse",
-      "name": "Eclipse",
-      "subtitle": "Corona abierta, cuerpo en negro mate",
-      "image": "assets/cards/eclipse.svg",
-      "accent": "#ff9b54",
-      "tags": [
-        "Fenómenos",
-        "Tirada corta"
-      ],
+      "id": "el-crema",
+      "name": "La Crema",
+      "subtitle": "Nicolás González, artista orientozo",
+      "image": "assets/cards/el-crema.jpg",
+      "accent": "#ef3b2f",
+      "tags": ["Personaje", "CSB", "Ciudad Córdoba"],
       "stats": [
-        {
-          "label": "Rareza",
-          "value": "Holográfica inversa"
-        },
-        {
-          "label": "Set",
-          "value": "Fenómenos I"
-        },
-        {
-          "label": "Número",
-          "value": "2 de 6"
-        },
-        {
-          "label": "Referencia",
-          "value": "FNS-2024-ECL-0007-PRIMERA-TIRADA-VERIFICADA-POR-EL-ARCHIVO-CENTRAL"
-        }
+        { "label": "Tipo", "value": "Personaje" },
+        { "label": "Estrellas", "value": "3" },
+        { "label": "Puntos", "value": "300 Atk" },
+        { "label": "Número", "value": "1 de 20" }
       ],
-      "description": "La corona se imprimió en dos pasadas y la segunda quedó girada un grado. El resultado es un filo doble que recorre los rayos del cuadrante derecho.\n\nEl cuerpo central lleva una tinta mate que no refleja nada, de modo que el holograma del fondo parece avanzar por detrás de él."
+      "description": "Nicolás González, artista orientozo de ciudad Córdoba. Gran Sabio Popular, mago de los dichos, chakal de la CSB.\n\nHabilidad: se potencia +200 de Atk si se tiene alguna carta de CSB, Ciudad Córdoba o Chakalozos al PODER."
     },
     {
-      "id": "halo-lunar",
-      "name": "Halo lunar",
-      "subtitle": "Tres anillos discontinuos",
-      "image": "assets/cards/halo-lunar.svg",
-      "accent": "#cfdcff",
-      "tags": [
-        "Fenómenos"
-      ],
+      "id": "raro-nunca-facho",
+      "name": "Raro nunca facho",
+      "subtitle": "Resistir",
+      "image": "assets/cards/raro-nunca-facho.jpg",
+      "accent": "#2ec4d6",
+      "tags": ["Personaje"],
+      "stats": [{ "label": "Tipo", "value": "Personaje" }],
+      "description": "Esta lámina no lleva cuadro de texto: lo que tiene que decir lo dice la camiseta."
+    },
+    {
+      "id": "vegas-del-oriente",
+      "name": "Valle Grande",
+      "subtitle": "Las Vegas del Oriente",
+      "image": "assets/cards/vegas-del-oriente.jpg",
+      "accent": "#ff2f9a",
+      "tags": ["Lugar", "CSB"],
       "stats": [
-        {
-          "label": "Rareza",
-          "value": "Común"
-        },
-        {
-          "label": "Número",
-          "value": "3 de 6"
-        }
+        { "label": "Tipo", "value": "Lugar" },
+        { "label": "Estrellas", "value": "2" },
+        { "label": "Puntos", "value": "500 Def" },
+        { "label": "Número", "value": "1 de 50" }
       ],
-      "description": "Los anillos son discontinuos por diseño, no por desgaste."
-    },
-    {
-      "id": "relampago",
-      "name": "Relámpago",
-      "subtitle": "Prueba de imprenta en formato cuadrado",
-      "image": "assets/cards/relampago.svg",
-      "accent": "#ffe066",
-      "tags": [
-        "Prueba de imprenta",
-        "Formato cuadrado"
-      ],
-      "stats": [
-        {
-          "label": "Rareza",
-          "value": "Prueba única"
-        },
-        {
-          "label": "Set",
-          "value": "Fenómenos I"
-        },
-        {
-          "label": "Número",
-          "value": "4 de 6"
-        },
-        {
-          "label": "Estado",
-          "value": "Bueno, con roce en el canto"
-        }
-      ],
-      "description": "Se imprimió en cuadrado para ajustar el amarillo antes de la tirada definitiva. Es la única de la colección que no sale del formato vertical.\n\nEl amarillo quedó más alto de lo previsto y por eso se descartó."
-    },
-    {
-      "id": "marea-viva",
-      "name": "Marea viva",
-      "subtitle": "Nueve líneas de agua en formato panorámico",
-      "image": "assets/cards/marea-viva.svg",
-      "accent": "#3fd6c1",
-      "description": "Sin ficha. Entró en el archivo junto a la prueba de Relámpago y nadie llegó a catalogarla."
-    },
-    {
-      "id": "niebla",
-      "name": "Niebla",
-      "subtitle": "Lámina perdida",
-      "image": "assets/cards/niebla.svg",
-      "accent": "azul",
-      "tags": [
-        "Fenómenos",
-        "Lámina perdida"
-      ],
-      "stats": [
-        {
-          "label": "Rareza",
-          "value": "Desconocida"
-        },
-        {
-          "label": "Número",
-          "value": "6 de 6"
-        },
-        {
-          "label": "Estado",
-          "value": "No localizada"
-        }
-      ],
-      "description": "La lámina no está en el archivo. La ficha se conserva, la carta no, y por eso en su lugar aparece el nombre."
-    },
-    {
-      "id": "aurora",
-      "name": "Aurora (copia de la ficha)",
-      "image": "assets/cards/aurora.svg",
-      "description": "Entrada duplicada por error al volcar el inventario."
-    },
-    {
-      "id": "sin-nombre",
-      "image": "assets/cards/aurora.svg",
-      "description": "Entrada sin nombre: no debería aparecer en la colección."
+      "description": "Barrio popular del oriente de Cali, hogar del gargoleo, rumba y descontrol, hogar de la CSB.\n\nHabilidad: saca una carta de personaje que viva en este barrio."
     }
   ]
 }

@@ -10,7 +10,7 @@
 
   position: relative;
   width: var(--card-w, 17rem);
-  aspect-ratio: 2 / 3;
+  aspect-ratio: var(--card-ratio);
 }
 
 /* El resplandor del color propio de la carta, por detrás del canto */
@@ -61,6 +61,12 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0;
+  transition: opacity 420ms var(--ease-ui);
+}
+
+.card.is-loaded .card__img {
+  opacity: 1;
 }
 
 .card__fallback {

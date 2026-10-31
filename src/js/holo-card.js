@@ -24,6 +24,13 @@ export function createCard(card) {
   img.className = "card__img";
   img.src = card.image;
   img.alt = card.subtitle ? `${card.name}. ${card.subtitle}` : card.name;
+  img.decoding = "async";
+  // Una lámina escaneada tarda en decodificar. Sin esto aparece de golpe, y
+  // mientras tanto la carta parece rota en lugar de estar cargando.
+  if (img.complete && img.naturalWidth > 0) el.classList.add("is-loaded");
+  img.addEventListener("load", () => el.classList.add("is-loaded"), {
+    once: true,
+  });
   img.addEventListener("error", () => el.classList.add("is-missing"), {
     once: true,
   });

@@ -21,4 +21,5 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     print(f"Sirviendo en http://localhost:{PORT}")
-    ThreadingHTTPServer(("", PORT), NoCacheHandler).serve_forever()
+    # Solo esta máquina: "" expondría la carpeta del proyecto a toda la red local.
+    ThreadingHTTPServer(("127.0.0.1", PORT), NoCacheHandler).serve_forever()
