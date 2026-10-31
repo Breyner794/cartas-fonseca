@@ -1,0 +1,169 @@
+/* El abanico. Cada carta lleva un --offset firmado (su distancia a la activa)
+   y un data-offset con el mismo número; de ahí sale todo lo que se ve. */
+
+.carousel {
+  --card-w: clamp(9.5rem, 23vw, 16.5rem);
+  --fan-x: 72%;
+  --fan-rot: 20deg;
+
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6) var(--space-7);
+  overflow: hidden;
+}
+
+.carousel[hidden] {
+  display: none;
+}
+
+.carousel__stage {
+  position: relative;
+  width: 100%;
+  height: calc(var(--card-w) * 1.5 + 3rem);
+  perspective: 1500px;
+}
+
+.carousel__stage .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--card-w);
+  margin: calc(var(--card-w) * -0.75) 0 0 calc(var(--card-w) * -0.5);
+  transform: translate3d(calc(var(--offset, 0) * var(--fan-x)), 0, 0)
+    rotateY(calc(var(--offset, 0) * var(--fan-rot) * -1)) scale(var(--scale, 1));
+  transition:
+    transform var(--dur-fan) var(--ease-fan),
+    opacity var(--dur-fan) var(--ease-fan),
+    filter var(--dur-fan) var(--ease-fan);
+}
+
+.carousel__stage .card[data-offset="0"] {
+  --scale: 1;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.carousel__stage .card[data-offset="1"],
+.carousel__stage .card[data-offset="-1"] {
+  --scale: 0.85;
+  z-index: 2;
+  filter: brightness(0.66) saturate(0.82);
+  cursor: pointer;
+}
+
+.carousel__stage .card[data-offset="2"],
+.carousel__stage .card[data-offset="-2"] {
+  --scale: 0.71;
+  z-index: 1;
+  filter: brightness(0.42) saturate(0.62);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.carousel__stage .card[data-offset="far"] {
+  --scale: 0.6;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Flechas */
+
+.carousel__arrow {
+  position: absolute;
+  top: calc(var(--space-5) + (var(--card-w) * 1.5 + 3rem) / 2);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: var(--radius-control);
+  color: var(--text);
+  background-color: rgba(16, 23, 38, 0.72);
+  border: 1px solid var(--rule);
+  backdrop-filter: blur(6px);
+  transition:
+    background-color var(--dur-ui) var(--ease-ui),
+    border-color var(--dur-ui) var(--ease-ui),
+    opacity var(--dur-ui) var(--ease-ui);
+}
+
+.carousel__arrow svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.carousel__arrow:hover:not(:disabled) {
+  background-color: var(--surface-2);
+  border-color: var(--text-dim);
+}
+
+.carousel__arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel__arrow--prev {
+  left: var(--space-5);
+}
+
+.carousel__arrow--next {
+  right: var(--space-5);
+}
+
+/* Pie: posición en la colección y qué se puede hacer */
+
+.carousel__counter {
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.carousel__hint {
+  margin-top: calc(var(--space-2) * -1);
+  font-size: var(--t-xs);
+  color: var(--text-dim);
+}
+
+@media (max-width: 48rem) {
+  .carousel {
+    --fan-x: 50%;
+    --fan-rot: 14deg;
+    padding-inline: var(--space-4);
+  }
+
+  .carousel__arrow--prev {
+    left: var(--space-2);
+  }
+
+  .carousel__arrow--next {
+    right: var(--space-2);
+  }
+}
+
+/* Por debajo de este ancho el segundo nivel no cabe: se amontona contra la
+   activa y contra las flechas en lugar de dar profundidad. */
+@media (max-width: 56rem) {
+  .carousel__stage .card[data-offset="2"],
+  .carousel__stage .card[data-offset="-2"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 30rem) {
+  .carousel {
+    --card-w: clamp(8.5rem, 52vw, 12rem);
+    --fan-x: 46%;
+    --fan-rot: 16deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__stage .card {
+    transition-duration: 1ms;
+  }
+}

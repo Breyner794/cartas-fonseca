@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="src/css/tokens.css" />
     <link rel="stylesheet" href="src/css/base.css" />
     <link rel="stylesheet" href="src/css/holo.css" />
+    <link rel="stylesheet" href="src/css/carousel.css" />
   </head>
 
   <body>
@@ -30,7 +31,26 @@
 
       <p class="page__error" id="page-error" role="status" hidden></p>
 
-      <section class="carousel" id="carousel" aria-label="Cartas de la colección"></section>
+      <section class="carousel" id="carousel" aria-label="Cartas de la colección">
+        <div class="carousel__stage" id="carousel-stage"></div>
+
+        <button class="carousel__arrow carousel__arrow--prev" id="carousel-prev" type="button">
+          <span class="visually-hidden">Carta anterior</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M15 4 7 12l8 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <button class="carousel__arrow carousel__arrow--next" id="carousel-next" type="button">
+          <span class="visually-hidden">Carta siguiente</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <p class="carousel__counter" id="carousel-counter" aria-live="polite"></p>
+        <p class="carousel__hint">Abre una carta para leer su ficha</p>
+      </section>
     </div>
 
     <dialog class="detail" id="detail" aria-label="Datos de la carta"></dialog>

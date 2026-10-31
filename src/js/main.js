@@ -1,5 +1,5 @@
 import { loadCollection, DataError } from "./data.js";
-import { createCard, enableTilt } from "./holo-card.js";
+import { createCarousel } from "./carousel.js";
 
 const titleEl = document.getElementById("collection-title");
 const subtitleEl = document.getElementById("collection-subtitle");
@@ -30,11 +30,17 @@ async function start() {
     return;
   }
 
-  // Montaje provisional: el carrusel lo sustituye en la tarea siguiente.
-  const nodes = data.cards.map(createCard);
-  carouselEl.append(...nodes);
-  nodes[0].classList.add("is-active");
-  enableTilt(nodes[0]);
+  createCarousel({
+    stage: document.getElementById("carousel-stage"),
+    prev: document.getElementById("carousel-prev"),
+    next: document.getElementById("carousel-next"),
+    counter: document.getElementById("carousel-counter"),
+    cards: data.cards,
+    onOpen: (position) => {
+      // La ficha se abre aquí en la tarea siguiente.
+      console.info("abrir", data.cards[position].name);
+    },
+  });
 }
 
 function showMessage(message) {
