@@ -16,14 +16,14 @@
       "name": "La Crema",
       "image": "assets/cards/el-crema.jpg",
       "accent": "#ef3b2f",
-      "description": "Nicolás González, artista orientozo de ciudad Córdoba. Gran Sabio Popular, mago de los dichos, chakal de la CSB.\n\nHabilidad: se potencia +200 de Atk si se tiene alguna carta de CSB, Ciudad Córdoba o Chakalozos al PODER."
+      "description": "Esta carta representa una amistad y un detalle para el socio de la pandilla La Jaiba, el crustáceo de la banda, a quien admiro demasiado y respeto mucho como colega, amigo y artista.\n\nEspero, manito, que podamos compartir muchos más momentos, chambas y pintas. Que sigamos creando, parchando y compartiendo experiencias.\n\nCSB Foreva.\n\nSiempre siendo la crema de la crema."
     },
     {
       "id": "raro-nunca-facho",
-      "name": "Raro nunca facho",
+      "name": "El Resistir",
       "image": "assets/cards/raro-nunca-facho.jpg",
       "accent": "#2ec4d6",
-      "description": "Esta lámina no lleva cuadro de texto: lo que tiene que decir lo dice la camiseta."
+      "description": "Se volvio en algo cotidiano para uno, pero no deberia ser asi, el resistir no deberia ser una condena, todo esto lo pienso en una disputa del que sucede si tumban el puño de puerto resistencia, y del como se sigue censurando las pintas que se hacen, como se obliga constantemente a resistir, todo eso s muy raro, por que eso nunca para."
     },
     {
       "id": "vegas-del-oriente",
